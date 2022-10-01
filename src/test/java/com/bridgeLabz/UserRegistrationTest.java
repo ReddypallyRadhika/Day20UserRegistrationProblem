@@ -68,5 +68,26 @@ public class UserRegistrationTest {
         Assert.assertFalse(result);
 
     }
+    @Test
+   public void TestUser_MobileNo_With_Country_Code_True() {
+        //  UserRegistration  mobileNo=new UserRegistration();
+        boolean result= UserRegistration.isValidUserMobileNo("91 9919819801");
+       Assert.assertTrue(result);
 
+    }
+    @Test
+    public void TestUser_MobileNo_Without_Country_Code_False() {
+
+     //   UserRegistration  mobileNo=new UserRegistration();
+        boolean result= UserRegistration.isValidUserMobileNo("9919819801");
+        Assert.assertFalse(result);
+    }
+    @Test
+    public void TestUser_MobileNo_Min_10digit_Number_False() {
+
+       // UserRegistration  mobileNo=new UserRegistration();
+        boolean result= UserRegistration.isValidUserMobileNo("9919819801");
+        Assert.assertFalse(result);
+
+    }
 }
