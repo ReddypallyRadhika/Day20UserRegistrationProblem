@@ -90,4 +90,20 @@ public class UserRegistrationTest {
         Assert.assertFalse(result);
 
     }
+    @Test
+    public void TestUser_Password_minimum_8Characters_True() {
+
+      //  UserRegistration  password=new UserRegistration();
+        boolean result= UserRegistration.isValidUserPassword("RRadhika");
+        Assert.assertTrue(result);
+
+    }
+    @Test
+    public void TestUser_Password_LessThan_8Characters_False() {
+
+       // UserRegistration  password=new UserRegistration();
+        boolean result= UserRegistration.isValidUserPassword("Radhika");
+        Assert.assertFalse(result);
+
+    }
 }
