@@ -1,6 +1,6 @@
 package com.bridgeLabz;
-/*As a User need to follow pre-defined Password rules.
-Rule1– minimum 8 Characters - NOTE – All rules must be passed
+/*UC6
+Rule2– Should have at least 1 Upper Case - NOTE – All rules must be passed
 */
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

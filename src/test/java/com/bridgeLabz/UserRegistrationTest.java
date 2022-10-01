@@ -106,4 +106,18 @@ public class UserRegistrationTest {
         Assert.assertFalse(result);
 
     }
+    @Test
+    public void TestUser_Password_1UpperCase_True() {
+
+        boolean result= UserRegistration.isValidUserPassword("RadhikaS");
+        Assert.assertTrue(result);
+
+    }
+    @Test
+    public void TestUser_Password_No_UpperCase_False() {
+
+        boolean result= UserRegistration.isValidUserPassword("karthika");
+        Assert.assertFalse(result);
+
+    }
 }
