@@ -57,17 +57,42 @@ public class UserRegistrationTest {
     public void TestUserEmail_True() {
 
         UserRegistration  email=new UserRegistration();
-        boolean result=email.isValidUserLastname("abc.xyz@bl.co.in");
-        Assert.assertFalse(result);
+        boolean result=email.isValidUserEmail("abc.xyz@bl.co.in");
+        Assert.assertTrue(result);
 
     }
     @Test
     public void TestUserEmail_False() {
 
         UserRegistration  email=new UserRegistration();
-        boolean result=email.isValidUserLastname("abc.xyz@bl.");
+        boolean result=email.isValidUserEmail("abc.xyz@bl.");
         Assert.assertFalse(result);
 
     }
+    @Test
+    public void TestUser_MobileNo_With_Country_Code_True() {
+
+        UserRegistration  mobileNo=new UserRegistration();
+        boolean result=mobileNo.isValidUserMobileNo("91 9919819801");
+        Assert.assertTrue(result);
+
+    }
+    @Test
+    public void TestUser_MobileNo_Without_Country_Code_False() {
+
+        UserRegistration  mobileNo=new UserRegistration();
+        boolean result=mobileNo.isValidUserMobileNo("9919819801");
+        Assert.assertFalse(result);
+
+    }
+    @Test
+    public void TestUser_MobileNo_Min_10digit_Number_False() {
+
+        UserRegistration  mobileNo=new UserRegistration();
+        boolean result=mobileNo.isValidUserMobileNo("9919819801");
+        Assert.assertFalse(result);
+
+    }
+
 
 }
