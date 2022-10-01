@@ -120,4 +120,18 @@ public class UserRegistrationTest {
         Assert.assertFalse(result);
 
     }
+    @Test
+    public void TestUser_Password_1Numeric_True() {
+
+        boolean result= UserRegistration.isValidUserPassword("karthika1");
+        Assert.assertTrue(result);
+
+    }
+    @Test
+    public void TestUser_Password_No_Numeric_False() {
+
+        boolean result= UserRegistration.isValidUserPassword("karthika");
+        Assert.assertFalse(result);
+
+    }
 }

@@ -1,6 +1,6 @@
 package com.bridgeLabz;
-/*UC6
-Rule2– Should have at least 1 Upper Case - NOTE – All rules must be passed
+/*UC7
+Rule3– Should have at least 1 numeric number in the password - NOTE – All rules must be passed
 */
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,7 +32,7 @@ public class UserRegistration {
         return matcherObject.matches();
     }
     public static boolean isValidUserPassword(String password) {
-        String passwordRegex = "^(?=.*[A-Z])([a-zA-z]{8,20})$";
+        String passwordRegex = "^(?=.*[0-9])(?=.*[A-Z])([a-zA-z0-9]{8,20})$";
         Pattern patternObject = Pattern.compile(passwordRegex);
         Matcher matcherObject = patternObject.matcher(password);
         return matcherObject.matches();
