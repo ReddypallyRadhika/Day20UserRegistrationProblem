@@ -14,7 +14,7 @@ public class UserRegistration {
         return matcherObject.matches();
     }
     public static boolean isValidUserLastname(String lastName) {
-        String lastNameRegex = "^[A-Z]\\w{2,29}$";
+        String lastNameRegex = "[A-Z]+([ '-][a-zA-Z]+)*";
         Pattern patternObject = Pattern.compile(lastNameRegex);
         Matcher matcherObject = patternObject.matcher(lastName);
         return matcherObject.matches();
