@@ -1,6 +1,7 @@
 package com.bridgeLabz;
-/*uc6
-Rule2 – Should have at least 1 Upper Case - NOTE – All rules must be passed
+/*uc3
+As a User need to enter a valid email - E.g. abc.xyz@bl.co.in
+- Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @ and . positions
 */
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,18 +24,6 @@ public class UserRegistration {
         //abc.xyz@bl.co.in
         Pattern patternObject = Pattern.compile(emailRegex);
         Matcher matcherObject = patternObject.matcher(email);
-        return matcherObject.matches();
-    }
-    public static boolean isValidUserMobileNo(String mobileNo) {
-        String mobileNoRegex = "([0-9]{2})[-.●\s]?([0-9]{10})$";
-        Pattern patternObject = Pattern.compile(mobileNoRegex);
-        Matcher matcherObject = patternObject.matcher(mobileNo);
-        return matcherObject.matches();
-    }
-    public static boolean isValidUserPassword(String password) {
-        String passwordRegex = "^(?=.*[A-Z])([a-zA-z]{8,20})$";
-        Pattern patternObject = Pattern.compile(passwordRegex);
-        Matcher matcherObject = patternObject.matcher(password);
         return matcherObject.matches();
     }
 
