@@ -16,7 +16,7 @@ public class UserRegistrationTest {
         public void TestUserFirstName_Short_False() {
 
           //  UserRegistration  firstname1=new UserRegistration();
-            boolean result1= UserRegistration.isValidUserFirstname("sagar");
+            boolean result1= UserRegistration.isValidUserFirstname("sager");
             Assert.assertFalse(result1);
         
     }
@@ -105,6 +105,20 @@ public class UserRegistrationTest {
 
        // UserRegistration  password=new UserRegistration();
         boolean result= UserRegistration.isValidUserPassword("Radhika");
+        Assert.assertFalse(result);
+
+    }
+    @Test
+    public void TestUser_Password_1UpperCase_True() {
+
+        boolean result= UserRegistration.isValidUserPassword("RadhikaS");
+        Assert.assertTrue(result);
+
+    }
+    @Test
+    public void TestUser_Password_No_UpperCase_False() {
+
+        boolean result= UserRegistration.isValidUserPassword("karthika");
         Assert.assertFalse(result);
 
     }
