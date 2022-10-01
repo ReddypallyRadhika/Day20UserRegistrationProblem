@@ -134,4 +134,18 @@ public class UserRegistrationTest {
         Assert.assertFalse(result);
 
     }
+    @Test
+    public void TestUser_1SpecialCharacter_True() {
+
+        boolean result= UserRegistration.isValidUserPassword("Karthikaa1@");
+        Assert.assertTrue(result);
+
+    }
+    @Test
+    public void TestUser_Password_No_SpecialCharacter_False() {
+
+        boolean result= UserRegistration.isValidUserPassword("karthika1");
+        Assert.assertFalse(result);
+
+    }
 }
